@@ -69,6 +69,7 @@ class FavoriteAdapter(private val context: Context): RecyclerView.Adapter<Recycl
                 }
             }
             nameTextView.text = data.name
+            adrTextView.text = data.address
             Picasso.get().load(data.imageUrl).into(imageView) // Picassoというライブラリを使ってImageVIewに画像をはめ込む
             favoriteImageView.setOnClickListener {
                 onClickDeleteFavorite?.invoke(data)
@@ -83,6 +84,7 @@ class FavoriteAdapter(private val context: Context): RecyclerView.Adapter<Recycl
         val nameTextView: TextView = view.findViewById(R.id.nameTextView)
         val imageView: ImageView = view.findViewById(R.id.imageView)
         val favoriteImageView: ImageView = view.findViewById(R.id.favoriteImageView)
+        val adrTextView: TextView = view.findViewById(R.id.adrTextView)
     }
 
     // お気に入り登録がまだ行われていないとき
